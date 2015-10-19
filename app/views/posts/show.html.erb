@@ -1,0 +1,9 @@
+<p class='pull-right'>
+  [<%= link_to 'edit this post', edit_post_path(@post) %>]
+</p>
+
+<p><%= render @post.categories %></p>
+
+<%= render '/shared/content_title', title: @post.title %>
+
+<p><%= @post.description %></p>
