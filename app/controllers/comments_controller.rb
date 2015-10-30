@@ -16,12 +16,11 @@ class CommentsController < ApplicationController
 
   def vote
     @comment = Comment.find(params[:id])
-    binding.pry
-    vote = Vote.create(voteable: @comment, creator: current_user, vote: params[:vote])
+    @vote = Vote.create(voteable: @comment, creator: current_user, vote: params[:vote])
 
     respond_to do |format|
       format.html do
-        if vote.valid?
+        if @vote.valid?
           flash[:notice] = 'Your vote has been counted.'
         else
           flash[:error] = 'You may vote only once for that comment'
