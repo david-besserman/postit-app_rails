@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    binding.pry
   end
 
   def new
