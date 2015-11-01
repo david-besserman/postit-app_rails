@@ -15,13 +15,8 @@ class CommentsController < ApplicationController
   end
 
   def vote
-<<<<<<< HEAD
     @comment = Comment.find(params[:id])
     @vote = Vote.create(voteable: @comment, creator: current_user, vote: params[:vote])
-=======
-    @comment = Comment.find_by(slug: params[:id])
-    vote = Vote.create(voteable: @comment, creator: current_user, vote: params[:vote])
->>>>>>> parent of 7e16c5f... Comment votes bug fixed
 
     respond_to do |format|
       format.html do
