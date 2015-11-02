@@ -26,8 +26,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      falsh[:notice] = 'Your information has been updated.'
-      redirect to root_path
+      flash[:notice] = 'Your information has been updated.'
+      redirect_to root_path
     else
       flash[:error] = 'Something went wrong'
       render :edit
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :time_zone)
   end
 
   def set_user

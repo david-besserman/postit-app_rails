@@ -4,6 +4,10 @@
   <dl class='dl-horizontal'>
     <dt>Username:</dt>
     <dd><%= @user.username %></dd>
+    <% if !@user.time_zone.blank? %> 
+      <dt>Time zone:</dt>
+      <dd><%= @user.time_zone %></dd>
+    <% end %>
   </dl>
 </div>
 
